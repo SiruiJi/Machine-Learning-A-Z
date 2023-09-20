@@ -47,7 +47,8 @@ X_train[:, 3:] = sc.fit_transform(X_train[:, 3:])
   transform: This scales the features of X_train using the computed mean and standard deviation.'''
 
 X_test[:, 3:] = sc.transform(X_test[:, 3:])
-'''transform: This scales the features of X_test using the mean and standard deviation that were computed from X_train.'''
+'''transform: This scales the features of X_test using the mean and standard deviation that were computed from X_train.
+DON'T scales the dummy variables. '''
 
 print(X_train)
 print(X_test)
