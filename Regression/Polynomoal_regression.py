@@ -32,5 +32,7 @@ plt.plot(X_grid, regressor.predict(poly_reg.fit_transform(X_grid)), color='blue'
 
 # apply the model
 y_pred = regressor.predict(poly_reg.fit_transform([[6.5]]))
+'''according to the model documents, we must input observation in array, '[[]]' double pair of square brackets(two dimeansion) is way to create array
+    [[6, 5], [2, 3]] is a matrix with first row contain 6, 5. seconde row contain 2, 3.''' 
 print(y_pred)
                        
