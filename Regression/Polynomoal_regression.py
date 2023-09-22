@@ -10,7 +10,7 @@ X = dataset.iloc[:, 1:-1]
 y = dataset.iloc[:, -1]
 
 # taking care of the missing value
-# encoding catagorical varibale
+# encoding categorical variable
 # train_test_split
 # feature scaling
 
