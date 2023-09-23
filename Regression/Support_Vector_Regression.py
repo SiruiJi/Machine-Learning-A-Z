@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 # import data
 dataset = pd.read_csv('/Position_Salaries.csv')
@@ -35,7 +35,7 @@ regressor.fit(X, y)
 
 # predict
 print(sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])).reshape(-1,1)))
-
-# visualizing the result
+X_grid = np.arange(min(sc_X.inverse_transform(X)), max(sc_X.inverse_transform(X)), 0.1)
+X_grid = X_grid.reshape(len(X_grid), 1)
 plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color='red')
-plt.plot(sc_X.inverse_transform(X), sc_y.inverse_transform(regressor.predict(X).reshape(-1,1)), color='blue')
+plt.plot(X_grid, sc_y.inverse_transform(regressor.predict(sc_X.transform(X_grid)).reshape(-1,1)), color='blue')
